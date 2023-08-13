@@ -6,7 +6,7 @@ interface Props {
 
 const Input = ({ id, label, inputType = "text" }: Props) => {
   return (
-    <div className="mb-3">
+    <div className="col-md-3">
       <label htmlFor={id} className="form-label">
         {label}
       </label>

@@ -1,15 +1,15 @@
 import Input from "./Input";
 import Select from "./Select";
-import brands from "../../data/brands.json";
+import data from "../../data/data.json";
 
 function Form() {
-  console.log(brands);
+  console.log(data);
   return (
     <>
       <form>
-        <Input id="clientName" label="Cliente" />
-        <Input id="clientName" label="Cliente" />
-        <Select id="marca" label="Marca" options={brands["Brands"]} />
+        <Input id="client" label="Cliente" />
+        <Input id="person" label="Pessoa de contacto" />
+        <Select id="brand" label="Marca" options={data["Brands"]} />
       </form>
     </>
   );

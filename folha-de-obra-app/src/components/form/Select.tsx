@@ -7,12 +7,14 @@ interface Props {
 const Select = ({ id, label, options }: Props) => {
   return (
     <>
-      <label htmlFor={id}>{label}</label>
-      <select className="form-select" name={id} id={id}>
-        {options.map((option) => (
-          <option value={option}>{option}</option>
-        ))}
-      </select>
+      <div className="col-md-3">
+        <label htmlFor={id}>{label}</label>
+        <select className="form-select" name={id} id={id}>
+          {options.map((option) => (
+            <option value={option}>{option}</option>
+          ))}
+        </select>
+      </div>
     </>
   );
 };
