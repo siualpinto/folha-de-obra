@@ -1,13 +1,19 @@
+import InputFormComponent from "./InputFormComponent";
+import SelectFormComponent from "./SelectFormComponent";
+import brands from "../../data/brands.json";
+
 function Form() {
+  console.log(brands);
   return (
     <>
       <form>
-        <div className="mb-3">
-          <label htmlFor="name" className="form-label">
-            Name
-          </label>
-          <input id="name" type="text" className="form-control" />
-        </div>
+        <InputFormComponent id="clientName" label="Cliente" />
+        <InputFormComponent id="clientName" label="Cliente" />
+        <SelectFormComponent
+          id="marca"
+          label="Marca"
+          options={brands["Brands"]}
+        />
       </form>
     </>
   );
