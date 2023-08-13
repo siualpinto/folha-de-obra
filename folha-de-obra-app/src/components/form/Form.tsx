@@ -1,5 +1,5 @@
-function Form(){
-    return <h1>Encomenda</h1>
+function Form() {
+  return <></>;
 }
 
 export default Form;
