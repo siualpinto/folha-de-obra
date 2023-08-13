@@ -4,7 +4,7 @@ interface Props {
   inputType?: "text" | "number";
 }
 
-const InputFormComponent = ({ id, label, inputType = "text" }: Props) => {
+const Input = ({ id, label, inputType = "text" }: Props) => {
   return (
     <div className="mb-3">
       <label htmlFor={id} className="form-label">
@@ -15,4 +15,4 @@ const InputFormComponent = ({ id, label, inputType = "text" }: Props) => {
   );
 };
 
-export default InputFormComponent;
+export default Input;

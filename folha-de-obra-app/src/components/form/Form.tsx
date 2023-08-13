@@ -1,5 +1,5 @@
-import InputFormComponent from "./InputFormComponent";
-import SelectFormComponent from "./SelectFormComponent";
+import Input from "./Input";
+import Select from "./Select";
 import brands from "../../data/brands.json";
 
 function Form() {
@@ -7,13 +7,9 @@ function Form() {
   return (
     <>
       <form>
-        <InputFormComponent id="clientName" label="Cliente" />
-        <InputFormComponent id="clientName" label="Cliente" />
-        <SelectFormComponent
-          id="marca"
-          label="Marca"
-          options={brands["Brands"]}
-        />
+        <Input id="clientName" label="Cliente" />
+        <Input id="clientName" label="Cliente" />
+        <Select id="marca" label="Marca" options={brands["Brands"]} />
       </form>
     </>
   );

@@ -4,7 +4,7 @@ interface Props {
   options: string[];
 }
 
-const SelectFormComponent = ({ id, label, options }: Props) => {
+const Select = ({ id, label, options }: Props) => {
   return (
     <>
       <label htmlFor={id}>{label}</label>
@@ -17,4 +17,4 @@ const SelectFormComponent = ({ id, label, options }: Props) => {
   );
 };
 
-export default SelectFormComponent;
+export default Select;
