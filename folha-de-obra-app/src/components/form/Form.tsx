@@ -1,5 +1,5 @@
 import Client from "./client/client";
-import Vehicle from "./vehicle/vehicle";
+import Vehicle from "./vehicle/Vehicle";
 
 function Form() {
   return (

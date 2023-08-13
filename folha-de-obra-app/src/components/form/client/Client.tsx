@@ -4,8 +4,8 @@ const Client = () => {
   return (
     <>
       <h3>Cliente</h3>
-      <Input id="clientName" label="Nome" />
-      <Input id="personName" label="Pessoa de contacto" />
+      <Input id="ClientName" label="Nome" />
+      <Input id="PersonName" label="Pessoa de contacto" />
     </>
   );
 };
