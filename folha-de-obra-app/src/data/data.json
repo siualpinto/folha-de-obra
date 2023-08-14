@@ -17,5 +17,31 @@
     "TOYOTA",
     "VOLKSWAGEN",
     "VOLVO"
+  ],
+  "Boxes": [
+    "Carroçaria Fixa Transporte Gás",
+    "Carroçaria Fixa Taipais Madeira",
+    "Carroçaria Fixa Taipais Aço",
+    "Carroçaria Fixa Taipais Alumínio",
+    "Carroçaria Basculante Trilateral",
+    "Carroçaria Basculante Bi - Lateral",
+    "Carroçaria Basculante Retaguarda",
+    "Carroçaria Eco-Box Fixa",
+    "Carroçaria Eco-Box Trilaterall",
+    "Carroçaria Eco-Box Bilateral",
+    "Carroçaria Eco-Box Traseira",
+    "Carroçaria Estrado",
+    "Carroçaria Estrado Porta Máquinas",
+    "Carroçaria Pronto Socorro",
+    "Carroçaria Multibenne",
+    "Carroçaria Ampliroll",
+    "Carroçaria Lonas T. Fixo",
+    "Carroçaria Lonas Bebidas",
+    "Carroçaria Lonas T. Correr",
+    "Revestimento Interior",
+    "Carroçaria Contentor Fechado",
+    "Contentor para Ampliroll",
+    "ToolBox",
+    "Outros"
   ]
 }
