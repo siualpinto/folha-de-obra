@@ -1,3 +1,5 @@
+import Input from "./Input";
+
 interface Props {
   ids: string[];
   labels: string[];
@@ -13,10 +15,7 @@ const MultipleInputs = ({ ids, labels, title, inputType = "text" }: Props) => {
         <div className="row">
           {ids.map((id, index) => (
             <div className="col">
-              <label htmlFor={id} className="form-label">
-                {labels[index]}
-              </label>
-              <input id={id} type={inputType} className="form-control" />
+              <Input id={id} label={labels[index]} inputType={inputType} />
             </div>
           ))}
         </div>

@@ -1,6 +1,6 @@
 import data from "../../../data/data.json";
-import Input from "../../common/Input";
-import MultipleInputs from "../../common/MultipleInputs";
+import Input from "../../common/Inputs/Input";
+import MultipleInputs from "../../common/Inputs/MultipleInputs";
 import Select from "../../common/Select";
 
 const Vehicle = () => {
@@ -26,7 +26,7 @@ const Vehicle = () => {
             />
             <MultipleInputs
               ids={["Internal_L", "Internal_L", "Internal_L"]}
-              title="Dimensões Inteiores Principais"
+              title="Dimensões Interiores Principais"
               labels={["L", "W", "H"]}
               inputType="number"
             />
