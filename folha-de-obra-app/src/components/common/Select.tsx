@@ -4,7 +4,7 @@ interface Props {
   options: string[];
 }
 
-const Select = ({ id, label, options }: Props) => {
+const Select = ({ id, label, options = [] }: Props) => {
   return (
     <>
       <div>

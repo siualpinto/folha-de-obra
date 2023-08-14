@@ -12,7 +12,7 @@ const Sides = () => {
             <Select
               id="Side"
               label="Tipos de Taipais"
-              options={data["Sides"]}
+              options={data["SideTypes"]}
             />
             <Input id="CentralColumns" label="Colunas Centrais" />
             <Input id="RearColumns" label="Colunas Traseiras" />

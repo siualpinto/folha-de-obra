@@ -1,5 +1,5 @@
 {
-  "Brands": [
+  "BrandTypes": [
     "CITROËN",
     "DAF",
     "FIAT",
@@ -18,7 +18,7 @@
     "VOLKSWAGEN",
     "VOLVO"
   ],
-  "Boxes": [
+  "BoxTypes": [
     "Carroçaria Fixa Transporte Gás",
     "Carroçaria Fixa Taipais Madeira",
     "Carroçaria Fixa Taipais Aço",
@@ -44,7 +44,7 @@
     "ToolBox",
     "Outros"
   ],
-  "Sides": [
+  "SideTypes": [
     "ALUMINIO",
     "CHAPA CANELADO",
     "DOMEX WAVE SABINO",
@@ -208,5 +208,10 @@
     "TRAV OMEGA 60x60x3 L2500",
     "TRAV OMEGA 60x60x4 L2000",
     "TRAV OMEGA 60x60x4 L2500"
+  ],
+  "EmbeddedRingsTypes": [
+    "CHAPA ADAICO",
+    "NORMALIZADAS DE 8TON",
+    "EMBUTIDAS SABINO"
   ]
 }

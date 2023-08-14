@@ -4,13 +4,14 @@ import Client from "./client/Client";
 import Vehicle from "./vehicle/Vehicle";
 import Sides from "./sides/Sides";
 import TruckPlatform from "./truckPlatform/TruckPlatform";
+import CargoTieingSystem from "./cargoTieingSystem/CargoTieingSystems";
 
 function Form() {
   const [key, setKey] = useState("client");
 
   return (
     <Tabs
-      id="controlled-tab-example"
+      id="controlled-tab-form"
       activeKey={key}
       onSelect={(k) => setKey(k!)}
       className="mb-3"
@@ -21,11 +22,13 @@ function Form() {
       <Tab eventKey="Vehicle" title="Veiculo">
         <Vehicle />
       </Tab>
-      {/* TODO */}
       <Tab eventKey="TruckPlatform" title="Configuração de estrado">
         <TruckPlatform />
       </Tab>
-      <Tab eventKey="Carga" title="Sistemas de armação de carga"></Tab>
+      <Tab eventKey="Carga" title="Sistemas de armação de carga">
+        <CargoTieingSystem />
+      </Tab>
+      {/* TODO */}
       <Tab
         eventKey="Basculante"
         title="Configuração especifica basculante"
@@ -38,5 +41,3 @@ function Form() {
 }
 
 export default Form;
-
-

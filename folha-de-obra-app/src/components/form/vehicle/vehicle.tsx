@@ -1,17 +1,24 @@
+import {
+  externalH,
+  externalL,
+  externalW,
+  internalH,
+  internalL,
+  internalW,
+} from "./helper";
 import data from "../../../data/data.json";
 import Input from "../../common/Inputs/Input";
 import MultipleInputs from "../../common/Inputs/MultipleInputs";
 import Select from "../../common/Select";
-
-const Vehicle = () => {
+function Vehicle() {
   return (
     <>
       <h3>Veiculo</h3>
       <div className="container">
         <div className="row">
           <div className="col">
-            <Select id="Box" label="Tipo de Caixa" options={data["Boxes"]} />
-            <Select id="Brand" label="Marca" options={data["Brands"]} />
+            <Select id="Box" label="Tipo de Caixa" options={data["BoxTypes"]} />
+            <Select id="Brand" label="Marca" options={data["BrandTypes"]} />
             <Input id="Model" label="Modelo" />
             <Input id="Tension" label="Tensão" />
             <Input id="Variant" label="Variação" />
@@ -19,22 +26,18 @@ const Vehicle = () => {
           </div>
           <div className="col">
             <MultipleInputs
-              ids={["External_L", "External_L", "External_L"]}
               title="Dimensões Exteriores Principais"
-              labels={["L", "W", "H"]}
-              inputType="number"
+              inputs={[externalL, externalW, externalH]}
             />
             <MultipleInputs
-              ids={["Internal_L", "Internal_L", "Internal_L"]}
-              title="Dimensões Interiores Principais"
-              labels={["L", "W", "H"]}
-              inputType="number"
+              title="Dimensões Exteriores Principais"
+              inputs={[internalL, internalW, internalH]}
             />
           </div>
         </div>
       </div>
     </>
   );
-};
+}
 
 export default Vehicle;

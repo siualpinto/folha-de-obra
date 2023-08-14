@@ -1,6 +1,9 @@
-import data from "../../../data/data.json";
-import Input from "../../common/Inputs/Input";
-import Select from "../../common/Select";
+import MultipleInputs from "../../common/Inputs/MultipleInputs";
+import {
+  embeddedRings,
+  embeddedRingsQuantity,
+  embeddedRingsSN,
+} from "./helper";
 
 const CargoTieingSystem = () => {
   return (
@@ -9,13 +12,10 @@ const CargoTieingSystem = () => {
       <div className="container">
         <div className="row">
           <div className="col">
-            <Select
-              id="TruckPlatformType"
-              label="Tipo De Estrutura Para Estrado"
-              options={data["TruckPlatformTypes"]}
+            <MultipleInputs
+              title="Argolas Embutidas"
+              inputs={[embeddedRings, embeddedRingsSN, embeddedRingsQuantity]}
             />
-
-            <Input id="TruckFloorType" label="Tipo De Piso" />
           </div>
         </div>
       </div>
@@ -24,3 +24,9 @@ const CargoTieingSystem = () => {
 };
 
 export default CargoTieingSystem;
+
+// TODO
+// Roquetes De Amarração De Carga
+// Ganchos De Corda
+// Orificios De Amarração No Estrado
+// Braços Porta Contentores
