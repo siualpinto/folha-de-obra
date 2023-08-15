@@ -1,6 +1,12 @@
 import { InputProp } from "../entities/FormProps";
 
-const Input = ({ id, label, inputType = "text", onChange, value,type }: InputProp) => {
+const Input = ({
+  id,
+  label,
+  inputType = "text",
+  onChange,
+  value,
+}: InputProp) => {
   return (
     <div>
       <label htmlFor={id} className="form-label">

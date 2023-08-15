@@ -18,9 +18,11 @@ const Select = ({ id, label, options = [], onChange, value }: Props) => {
           onChange={onChange}
           value={value}
         >
-          <option selected>Abrir este menu de escolha</option>
+          <option defaultValue="">Abrir este menu de escolha</option>
           {options.map((option) => (
-            <option value={option}>{option}</option>
+            <option key={option} value={option}>
+              {option}
+            </option>
           ))}
         </select>
       </div>

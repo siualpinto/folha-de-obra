@@ -1,4 +1,5 @@
 export interface FormProp {
+  id: string;
   type?: FormPropType;
 }
 
@@ -8,7 +9,6 @@ export enum FormPropType {
 }
 
 export interface InputProp extends FormProp {
-  id: string;
   label: string;
   inputType?: "text" | "number";
   type?: FormPropType.Input;
@@ -17,7 +17,6 @@ export interface InputProp extends FormProp {
 }
 
 export interface SelectProp extends FormProp {
-  id: string;
   label: string;
   options: string[];
   type?: FormPropType.Select;

@@ -13,7 +13,7 @@ const MultipleInputs = ({ inputs, title }: MultipleInput) => {
       <div className="container">
         <div className="row">
           {inputs.map((input) => (
-            <div className="col">
+            <div key={input.id} className="col">
               {input.type == FormPropType.Input && (
                 <Input {...(input as InputProp)} />
               )}

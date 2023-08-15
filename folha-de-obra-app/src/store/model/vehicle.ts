@@ -1,12 +1,12 @@
-import { Dimension } from "./dimension"
+import { Dimension } from "./dimension";
 
 export interface Vehicle {
-    BoxType: string | undefined,
-    Brand: string | undefined,
-    Model: string | undefined,
-    Tension: string | undefined,
-    Variation: string | undefined,
-    Version: string | undefined,
-    ExternalDimensions: Dimension
-    InternalDimensions: Dimension
+  BoxType: string;
+  Brand: string;
+  Model: string;
+  Tension: string;
+  Variation: string;
+  Version: string;
+  ExternalDimensions: Dimension;
+  InternalDimensions: Dimension;
 }
