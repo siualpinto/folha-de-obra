@@ -7,7 +7,7 @@ import TruckPlatform from "./truckPlatform/TruckPlatform";
 import CargoTieingSystem from "./cargoTieingSystem/CargoTieingSystems";
 
 function Form() {
-  const [key, setKey] = useState("client");
+  const [key, setKey] = useState("Client");
 
   return (
     <Tabs
