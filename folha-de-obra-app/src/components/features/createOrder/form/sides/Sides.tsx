@@ -1,6 +1,6 @@
-import data from "../../../data/data.json";
-import Input from "../../common/Inputs/Input";
-import Select from "../../common/Select";
+import data from "../../../../../data/data.json";
+import Input from "../../../../common/Inputs/Input";
+import Select from "../../../../common/Select";
 
 const Sides = () => {
   return (
@@ -12,7 +12,7 @@ const Sides = () => {
             <Select
               id="Side"
               label="Tipos de Taipais"
-              options={data["SideTypes"]}
+              options={data.SideTypes}
             />
             <Input id="CentralColumns" label="Colunas Centrais" />
             <Input id="RearColumns" label="Colunas Traseiras" />
@@ -20,7 +20,7 @@ const Sides = () => {
             <Select
               id="SupplementarySides"
               label="Taipais Suplementares"
-              options={data["SupplementarySides"]}
+              options={data.SupplementarySides}
             />
           </div>
         </div>

@@ -2,8 +2,8 @@ import {
   FormPropType,
   InputProp,
   SelectProp,
-} from "../../common/entities/FormProps";
-import data from "../../../data/data.json";
+} from "../../../../common/entities/FormProps";
+import data from "../../../../../data/data.json";
 
 export const embeddedRings: SelectProp = {
   id: "EmbeddedRingsType",

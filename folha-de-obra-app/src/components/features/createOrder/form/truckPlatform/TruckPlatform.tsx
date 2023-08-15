@@ -1,6 +1,6 @@
-import data from "../../../data/data.json";
-import Input from "../../common/Inputs/Input";
-import Select from "../../common/Select";
+import data from "../../../../../data/data.json";
+import Input from "../../../../common/Inputs/Input";
+import Select from "../../../../common/Select";
 
 const TruckPlatform = () => {
   return (
@@ -12,22 +12,22 @@ const TruckPlatform = () => {
             <Select
               id="TruckPlatformType"
               label="Tipo De Estrutura Para Estrado"
-              options={data["TruckPlatformTypes"]}
+              options={data.TruckPlatformTypes}
             />
             <Select
               id="TruckBeamType"
               label="Tipo De Longarinas"
-              options={data["TruckBeamTypes"]}
+              options={data.TruckBeamTypes}
             />
             <Select
               id="TruckTraverseBeamType"
               label="Tipo De Travessas"
-              options={data["TruckTraverseBeamTypes"]}
+              options={data.TruckTraverseBeamTypes}
             />
             <Select
               id="TruckClosingBeamType"
               label="Fechal"
-              options={data["TruckTraverseBeamTypes"]}
+              options={data.TruckTraverseBeamTypes}
             />
             <Input id="TruckFloorType" label="Tipo De Piso" />
             <Input

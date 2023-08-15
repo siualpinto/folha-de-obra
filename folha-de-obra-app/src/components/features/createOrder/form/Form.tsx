@@ -8,7 +8,7 @@ import CargoTieingSystem from "./cargoTieingSystem/CargoTieingSystems";
 
 function Form() {
   const [key, setKey] = useState("Client");
-  
+
   return (
     <Tabs
       id="controlled-tab-form"

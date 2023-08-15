@@ -5,15 +5,15 @@ import {
   internalH,
   internalL,
   internalW,
-} from "./helper";
-import data from "../../../data/data.json";
-import Input from "../../common/Inputs/Input";
-import MultipleInputs from "../../common/Inputs/MultipleInputs";
-import Select from "../../common/Select";
+} from "./Helper";
+import data from "../../../../../data/data.json";
+import Input from "../../../../common/Inputs/Input";
+import MultipleInputs from "../../../../common/Inputs/MultipleInputs";
+import Select from "../../../../common/Select";
 import { useDispatch, useSelector } from "react-redux";
-import { actions } from "../../../store/features/form/formSlice";
-import { Order } from "../../../store/model/order";
-import { InputProp } from "../../common/entities/FormProps";
+import { actions } from "../../../../../store/features/form/formSlice";
+import { Order } from "../../../../../store/model/order";
+import { InputProp } from "../../../../common/entities/FormProps";
 
 function Vehicle() {
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ function Vehicle() {
             <Select
               id="Box"
               label="Tipo de Caixa"
-              options={data["BoxTypes"]}
+              options={data.BoxTypes}
               value={formState.Vehicle.BoxType}
               onChange={(e) =>
                 dispatch(actions.setVehicleBoxType(e.target.value))
@@ -38,7 +38,7 @@ function Vehicle() {
             <Select
               id="Brand"
               label="Marca"
-              options={data["BrandTypes"]}
+              options={data.BrandTypes}
               value={formState.Vehicle.Brand}
               onChange={(e) =>
                 dispatch(actions.setVehicleBrand(e.target.value))

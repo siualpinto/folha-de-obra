@@ -1,4 +1,4 @@
-import { FormPropType, InputProp } from "../../common/entities/FormProps";
+import { FormPropType, InputProp } from "../../../../common/entities/FormProps";
 
 export const externalL: InputProp = {
   id: "ExternalL",

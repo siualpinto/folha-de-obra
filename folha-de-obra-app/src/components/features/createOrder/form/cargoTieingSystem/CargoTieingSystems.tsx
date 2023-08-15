@@ -1,9 +1,9 @@
-import MultipleInputs from "../../common/Inputs/MultipleInputs";
+import MultipleInputs from "../../../../common/Inputs/MultipleInputs";
 import {
   embeddedRings,
   embeddedRingsQuantity,
   embeddedRingsSN,
-} from "./helper";
+} from "./Helper";
 
 const CargoTieingSystem = () => {
   return (
