@@ -3,7 +3,7 @@ interface Props {
   label: string;
   inputType?: "text" | "number";
   onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined,
-  value: string | ReadonlyArray<string> | number | undefined
+  value?: string | ReadonlyArray<string> | number | undefined
 }
 
 const Input = ({ id, label, inputType = "text", onChange, value }: Props) => {
