@@ -8,7 +8,7 @@ import CargoTieingSystem from "./cargoTieingSystem/CargoTieingSystems";
 
 function Form() {
   const [key, setKey] = useState("Client");
-
+  
   return (
     <Tabs
       id="controlled-tab-form"
@@ -25,7 +25,7 @@ function Form() {
       <Tab eventKey="TruckPlatform" title="Configuração de estrado">
         <TruckPlatform />
       </Tab>
-      <Tab eventKey="Carga" title="Sistemas de armação de carga">
+      <Tab eventKey="Carga" title="Sistemas de amarração de carga">
         <CargoTieingSystem />
       </Tab>
       {/* TODO */}
