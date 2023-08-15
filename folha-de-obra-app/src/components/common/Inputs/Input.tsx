@@ -1,12 +1,6 @@
-interface Props {
-  id: string;
-  label: string;
-  inputType?: "text" | "number";
-  onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
-  value?: string | ReadonlyArray<string> | number | undefined;
-}
+import { InputProp } from "../entities/FormProps";
 
-const Input = ({ id, label, inputType = "text", onChange, value }: Props) => {
+const Input = ({ id, label, inputType = "text", onChange, value,type }: InputProp) => {
   return (
     <div>
       <label htmlFor={id} className="form-label">

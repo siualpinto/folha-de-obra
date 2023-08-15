@@ -1,4 +1,3 @@
-import { Cast } from "../../../common/generic/genericFunctions";
 import Select from "../Select";
 import {
   InputProp,
@@ -16,18 +15,10 @@ const MultipleInputs = ({ inputs, title }: MultipleInput) => {
           {inputs.map((input) => (
             <div className="col">
               {input.type == FormPropType.Input && (
-                <Input
-                  id={Cast<InputProp>(input).id}
-                  label={Cast<InputProp>(input).label}
-                  inputType={Cast<InputProp>(input).inputType}
-                />
+                <Input {...(input as InputProp)} />
               )}
               {input.type == FormPropType.Select && (
-                <Select
-                  id={Cast<SelectProp>(input).id}
-                  label={Cast<SelectProp>(input).label}
-                  options={Cast<SelectProp>(input).options}
-                />
+                <Select {...(input as SelectProp)} />
               )}
             </div>
           ))}
