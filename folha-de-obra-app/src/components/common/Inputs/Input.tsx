@@ -2,8 +2,8 @@ interface Props {
   id: string;
   label: string;
   inputType?: "text" | "number";
-  onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined,
-  value?: string | ReadonlyArray<string> | number | undefined
+  onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
+  value?: string | ReadonlyArray<string> | number | undefined;
 }
 
 const Input = ({ id, label, inputType = "text", onChange, value }: Props) => {
