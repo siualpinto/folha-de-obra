@@ -47,6 +47,9 @@ function Form() {
   }
 
   function SaveOrder(): void {
+    
+    // TODO ask user: are you sure you want to update this order?
+
     // TODO CHECK FORM VALIDATIONS
 
     // TODO REMOVE TMP PUSH TO ORDERS SLICES
@@ -56,6 +59,9 @@ function Form() {
   }
 
   function CreateOrder(): void {
+    
+    // TODO ask user: are you sure you want to create this order?
+
     // TODO CHECK FORM VALIDATIONS
 
     // TODO REMOVE TMP PUSH TO ORDERS SLICES
