@@ -3,6 +3,7 @@ import { Order } from "../../../store/model/order";
 
 const orderInitialState: Order[] = []
 
+// TODO REMOVE DUMMY DATA INITIALIZATION
 for (let index = 0; index < 10; index++) {
   orderInitialState.push({
     Id: `${index}`,
