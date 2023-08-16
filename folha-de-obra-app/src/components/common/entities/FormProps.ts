@@ -1,7 +1,7 @@
 export interface FormProp {
   id: string;
   type?: FormPropType;
-  disabled: boolean | undefined;
+  disabled?: boolean | undefined;
 }
 
 export enum FormPropType {
