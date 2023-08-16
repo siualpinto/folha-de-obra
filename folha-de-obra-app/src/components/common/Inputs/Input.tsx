@@ -6,6 +6,7 @@ const Input = ({
   inputType = "text",
   onChange,
   value,
+  disabled
 }: InputProp) => {
   return (
     <div>
@@ -13,6 +14,7 @@ const Input = ({
         {label}
       </label>
       <input
+        disabled={disabled}
         id={id}
         type={inputType}
         className="form-control"

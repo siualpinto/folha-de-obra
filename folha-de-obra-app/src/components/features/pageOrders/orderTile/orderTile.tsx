@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { Order } from "../../../../store/model/order";
 import "./orderTile.css";
-import { FormState, actions } from "../../createOrder/formSlice";
+import { FormState, actions, Mode } from "../../createOrder/formSlice";
 
 interface Props {
   Order: Order;
@@ -14,6 +14,7 @@ function OrderTile({ Order }: Props) {
     const formState: FormState = {
       Options: {
         IsOpen: true,
+        Mode: Mode.View
       },
       Order: order,
     };

@@ -2,17 +2,24 @@ import { createSlice } from "@reduxjs/toolkit";
 import { Order } from "../../../store/model/order";
 
 export interface Options {
-  IsOpen: boolean
+  IsOpen: boolean,
+  Mode: Mode
 }
 
 export interface FormState {
   Order: Order,
   Options: Options
 }
+export enum Mode {
+  Create,
+  Edit,
+  View,
+}
 
 const formInitialState: FormState = {
   Options: {
-    IsOpen: false
+    IsOpen: false,
+    Mode: Mode.Create
   },
   Order: {
     Id: -1,
