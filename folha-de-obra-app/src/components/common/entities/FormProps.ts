@@ -21,6 +21,8 @@ export interface SelectProp extends FormProp {
   label: string;
   options: string[];
   type?: FormPropType.Select;
+  onChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined;
+  value?: string | ReadonlyArray<string> | number | undefined;
 }
 
 export interface MultipleInput {

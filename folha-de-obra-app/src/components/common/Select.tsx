@@ -1,17 +1,19 @@
-interface Props {
-  id: string;
-  label: string;
-  options: string[];
-  onChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined;
-  value?: string | ReadonlyArray<string> | number | undefined;
-}
+import { SelectProp } from "./entities/FormProps";
 
-const Select = ({ id, label, options = [], onChange, value }: Props) => {
+const Select = ({
+  id,
+  label,
+  options = [],
+  onChange,
+  value,
+  disabled,
+}: SelectProp) => {
   return (
     <>
       <div>
         <label htmlFor={id}>{label}</label>
         <select
+          disabled={disabled}
           className="form-select"
           name={id}
           id={id}

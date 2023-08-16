@@ -11,14 +11,13 @@ import Input from "../../../../common/Inputs/Input";
 import MultipleInputs from "../../../../common/Inputs/MultipleInputs";
 import Select from "../../../../common/Select";
 import { useDispatch, useSelector } from "react-redux";
-import { actions } from "../../formSlice";
-import { Order } from "../../../../../store/model/order";
+import { actions, FormState, Mode } from "../../formSlice";
 import { InputProp } from "../../../../common/entities/FormProps";
 
 function Vehicle() {
   const dispatch = useDispatch();
   const formState = useSelector((state: any) => state.formReducer)
-    .value.Order as Order;
+    .value as FormState;
 
   return (
     <>
@@ -26,51 +25,57 @@ function Vehicle() {
         <div className="row">
           <div className="col">
             <Select
+              disabled={formState.Options.Mode === Mode.View}
               id="Box"
               label="Tipo de Caixa"
               options={data.BoxTypes}
-              value={formState.Vehicle.BoxType}
+              value={formState.Order.Vehicle.BoxType}
               onChange={(e) =>
                 dispatch(actions.setVehicleBoxType(e.target.value))
               }
             />
             <Select
+              disabled={formState.Options.Mode === Mode.View}
               id="Brand"
               label="Marca"
               options={data.BrandTypes}
-              value={formState.Vehicle.Brand}
+              value={formState.Order.Vehicle.Brand}
               onChange={(e) =>
                 dispatch(actions.setVehicleBrand(e.target.value))
               }
             />
             <Input
+              disabled={formState.Options.Mode === Mode.View}
               id="Model"
               label="Modelo"
-              value={formState.Vehicle.Model}
+              value={formState.Order.Vehicle.Model}
               onChange={(e) =>
                 dispatch(actions.setVehicleModel(e.target.value))
               }
             />
             <Input
+              disabled={formState.Options.Mode === Mode.View}
               id="Tension"
               label="Tensão"
-              value={formState.Vehicle.Tension}
+              value={formState.Order.Vehicle.Tension}
               onChange={(e) =>
                 dispatch(actions.setVehicleTension(e.target.value))
               }
             />
             <Input
+              disabled={formState.Options.Mode === Mode.View}
               id="Variant"
               label="Variação"
-              value={formState.Vehicle.Variation}
+              value={formState.Order.Vehicle.Variation}
               onChange={(e) =>
                 dispatch(actions.setVehicleVariation(e.target.value))
               }
             />
             <Input
+              disabled={formState.Options.Mode === Mode.View}
               id="Version"
               label="Versão"
-              value={formState.Vehicle.Version}
+              value={formState.Order.Vehicle.Version}
               onChange={(e) =>
                 dispatch(actions.setVehicleVersion(e.target.value))
               }
@@ -82,27 +87,30 @@ function Vehicle() {
               inputs={[
                 {
                   ...externalL,
-                  value: formState.Vehicle.ExternalDimensions.Length,
+                  value: formState.Order.Vehicle.ExternalDimensions.Length,
                   onChange: (e: any) =>
                     dispatch(
                       actions.setVehicleExternalDimensionsLength(e.target.value)
                     ),
+                  disabled: formState.Options.Mode === Mode.View,
                 } as InputProp,
                 {
                   ...externalW,
-                  value: formState.Vehicle.ExternalDimensions.Width,
+                  value: formState.Order.Vehicle.ExternalDimensions.Width,
                   onChange: (e: any) =>
                     dispatch(
                       actions.setVehicleExternalDimensionsWidth(e.target.value)
                     ),
+                  disabled: formState.Options.Mode === Mode.View,
                 } as InputProp,
                 {
                   ...externalH,
-                  value: formState.Vehicle.ExternalDimensions.Height,
+                  value: formState.Order.Vehicle.ExternalDimensions.Height,
                   onChange: (e: any) =>
                     dispatch(
                       actions.setVehicleExternalDimensionsHeight(e.target.value)
                     ),
+                  disabled: formState.Options.Mode === Mode.View,
                 } as InputProp,
               ]}
             />
@@ -111,27 +119,30 @@ function Vehicle() {
               inputs={[
                 {
                   ...internalL,
-                  value: formState.Vehicle.InternalDimensions.Length,
+                  value: formState.Order.Vehicle.InternalDimensions.Length,
                   onChange: (e: any) =>
                     dispatch(
                       actions.setVehicleInternalDimensionsLength(e.target.value)
                     ),
+                  disabled: formState.Options.Mode === Mode.View,
                 } as InputProp,
                 {
                   ...internalW,
-                  value: formState.Vehicle.InternalDimensions.Width,
+                  value: formState.Order.Vehicle.InternalDimensions.Width,
                   onChange: (e: any) =>
                     dispatch(
                       actions.setVehicleInternalDimensionsWidth(e.target.value)
                     ),
+                  disabled: formState.Options.Mode === Mode.View,
                 } as InputProp,
                 {
                   ...internalH,
-                  value: formState.Vehicle.InternalDimensions.Height,
+                  value: formState.Order.Vehicle.InternalDimensions.Height,
                   onChange: (e: any) =>
                     dispatch(
                       actions.setVehicleInternalDimensionsHeight(e.target.value)
                     ),
+                  disabled: formState.Options.Mode === Mode.View,
                 } as InputProp,
               ]}
             />
