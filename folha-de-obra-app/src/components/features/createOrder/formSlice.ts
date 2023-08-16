@@ -49,8 +49,8 @@ const formSlice = createSlice({
     value: orderInitialState,
   },
   reducers: {
-    setIsOpen: (state) => {
-      state.value.Options.IsOpen = !state.value.Options.IsOpen;
+    setIsOpen: (state, action) => {
+      state.value.Options.IsOpen = action.payload;
     },
     setClientName: (state, action) => {
       state.value.Order.Client.Name = action.payload;
