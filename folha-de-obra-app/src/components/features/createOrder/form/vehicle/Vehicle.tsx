@@ -11,14 +11,14 @@ import Input from "../../../../common/Inputs/Input";
 import MultipleInputs from "../../../../common/Inputs/MultipleInputs";
 import Select from "../../../../common/Select";
 import { useDispatch, useSelector } from "react-redux";
-import { actions } from "../../../../../store/features/form/formSlice";
+import { actions } from "../../formSlice";
 import { Order } from "../../../../../store/model/order";
 import { InputProp } from "../../../../common/entities/FormProps";
 
 function Vehicle() {
   const dispatch = useDispatch();
   const formState = useSelector((state: any) => state.formReducer)
-    .value as Order;
+    .value.Order as Order;
 
   return (
     <>

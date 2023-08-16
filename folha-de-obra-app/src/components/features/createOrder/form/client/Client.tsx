@@ -1,12 +1,12 @@
 import Input from "../../../../common/Inputs/Input";
 import { useDispatch, useSelector } from "react-redux";
-import { actions } from "../../../../../store/features/form/formSlice";
+import { actions } from "../../formSlice";
 import { Order } from "../../../../../store/model/order";
 
 const Client = () => {
   const dispatch = useDispatch();
-  const formState = useSelector((state: any) => state.formReducer)
-    .value as Order;
+  const formState = useSelector((state: any) => state.formReducer).value
+    .Order as Order;
 
   return (
     <>

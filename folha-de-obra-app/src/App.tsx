@@ -1,13 +1,32 @@
-import Form from "./components/features/createOrder/form/Form";
 import Search from "./components/features/search/Search";
+import Header from "./components/features/pageOrders/header/header";
+import "./App.css";
+import OrdersList from "./components/features/pageOrders/ordersList/ordersList";
+import Filters from "./components/features/pageOrders/filters/filters";
+
+// function App() {
+//   return (
+//     <>
+//       <div>
+//
+//         <Form />
+//       </div>
+//     </>
+//   );
+// }
 
 function App() {
   return (
     <>
-      <div>
-        <Search />
-        <Form />
-      </div>
+      <Header />
+
+      <main className="main">
+        <div>
+          <Search />
+          <Filters />
+        </div>
+        <OrdersList />
+      </main>
     </>
   );
 }
