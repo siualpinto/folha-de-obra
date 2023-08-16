@@ -52,6 +52,9 @@ const formSlice = createSlice({
     setInitialState: (state) => {
       state.value = formInitialState;
     },
+    setState: (state, action) => {
+      state.value = action.payload;
+    },
     setIsOpen: (state, action) => {
       state.value.Options.IsOpen = action.payload;
     },
