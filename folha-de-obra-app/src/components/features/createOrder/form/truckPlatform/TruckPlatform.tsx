@@ -5,7 +5,6 @@ import Select from "../../../../common/Select";
 const TruckPlatform = () => {
   return (
     <>
-      <h3>Configuração Estrado</h3>
       <div className="container">
         <div className="row">
           <div className="col">

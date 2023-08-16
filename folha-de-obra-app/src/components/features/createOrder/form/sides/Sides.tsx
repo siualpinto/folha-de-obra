@@ -5,7 +5,6 @@ import Select from "../../../../common/Select";
 const Sides = () => {
   return (
     <>
-      <h3>Laterais</h3>
       <div className="container">
         <div className="row">
           <div className="col">

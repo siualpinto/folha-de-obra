@@ -8,7 +8,6 @@ import {
 const CargoTieingSystem = () => {
   return (
     <>
-      <h3>Sistemas De Amarração De Carga</h3>
       <div className="container">
         <div className="row">
           <div className="col">

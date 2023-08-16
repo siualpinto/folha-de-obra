@@ -11,7 +11,6 @@ const Client = () => {
   return (
     <>
       <div className="col-md-3">
-        <h3>Cliente</h3>
         <Input
           id="ClientName"
           label="Nome"

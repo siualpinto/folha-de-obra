@@ -22,7 +22,6 @@ function Vehicle() {
 
   return (
     <>
-      <h3>Veiculo</h3>
       <div className="container">
         <div className="row">
           <div className="col">
