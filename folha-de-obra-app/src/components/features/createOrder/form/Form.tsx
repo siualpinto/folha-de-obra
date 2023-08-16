@@ -6,19 +6,35 @@ import Sides from "./sides/Sides";
 import TruckPlatform from "./truckPlatform/TruckPlatform";
 import CargoTieingSystem from "./cargoTieingSystem/CargoTieingSystems";
 import { useDispatch, useSelector } from "react-redux";
-import { Options, actions } from "../formSlice";
+import { FormState, actions as formActions } from "../formSlice";
+import { actions as ordersActions } from "../../pageOrders/ordersSlice";
 
 function Form() {
   const [key, setKey] = useState("Client");
   const dispatch = useDispatch();
-  const formState = useSelector((state: any) => state.formReducer).value
-    .Options as Options;
+  const formState = useSelector((state: any) => state.formReducer)
+    .value as FormState;
+
+  function CloseForm(): void {
+    dispatch(formActions.setIsOpen(false));
+    dispatch(formActions.setInitialState());
+  }
+
+  function SubmitForm(): void {
+    // TODO CHECK FORM VALIDATIONS
+
+    // TODO REMOVE TMP PUSH TO ORDERS SLICES
+    dispatch(ordersActions.addOrder(formState.Order));
+
+    CloseForm();
+  }
+
   return (
     <Modal
       centered
       fullscreen
-      show={formState.IsOpen}
-      onHide={() => dispatch(actions.setIsOpen(false))}
+      show={formState.Options.IsOpen}
+      onHide={() => CloseForm()}
     >
       <Modal.Header closeButton>
         <Modal.Title>Configurador</Modal.Title>
@@ -53,16 +69,10 @@ function Form() {
         </Tabs>
       </Modal.Body>
       <Modal.Footer>
-        <Button
-          variant="secondary"
-          onClick={() => dispatch(actions.setIsOpen(false))}
-        >
+        <Button variant="secondary" onClick={() => CloseForm()}>
           Cancelar
         </Button>
-        <Button
-          variant="primary"
-          onClick={() => dispatch(actions.setIsOpen(false))}
-        >
+        <Button variant="primary" onClick={() => SubmitForm()}>
           Encomendar
         </Button>
       </Modal.Footer>

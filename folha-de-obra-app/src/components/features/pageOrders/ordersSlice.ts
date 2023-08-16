@@ -5,7 +5,7 @@ const orderInitialState: Order[] = []
 
 for (let index = 0; index < 10; index++) {
   orderInitialState.push({
-    Id: `${index}`,
+    Id: index,
     Client: {
       Name: `TestClient${index}_Name`,
       ContactPerson: `TestClient${index}_ContactPerson`,
@@ -39,9 +39,11 @@ const ordersSlice = createSlice({
     value: orderInitialState,
   },
   reducers: {
-    // setClientName: (state, action) => {
-    //   state.value.Client.Name = action.payload;
-    // },
+    addOrder: (state, action) => {
+      let order = { ...action.payload } as Order;
+      order.Id = Math.round(Math.random() * 100000000000);
+      state.value.unshift(order);
+    },
   },
 });
 

@@ -10,12 +10,12 @@ export interface FormState {
   Options: Options
 }
 
-const orderInitialState: FormState = {
+const formInitialState: FormState = {
   Options: {
     IsOpen: false
   },
   Order: {
-    Id: "",
+    Id: -1,
     Client: {
       Name: "",
       ContactPerson: "",
@@ -46,9 +46,12 @@ const orderInitialState: FormState = {
 const formSlice = createSlice({
   name: "form",
   initialState: {
-    value: orderInitialState,
+    value: formInitialState,
   },
   reducers: {
+    setInitialState: (state) => {
+      state.value = formInitialState;
+    },
     setIsOpen: (state, action) => {
       state.value.Options.IsOpen = action.payload;
     },
