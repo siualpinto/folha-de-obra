@@ -8,6 +8,7 @@ import CargoTieingSystem from "./cargoTieingSystem/CargoTieingSystems";
 import { useDispatch, useSelector } from "react-redux";
 import { FormState, Mode, actions as formActions } from "../formSlice";
 import { actions as ordersActions } from "../../pageOrders/ordersSlice";
+import "./Form.css";
 
 function Form() {
   const [key, setKey] = useState("Client");
@@ -47,7 +48,6 @@ function Form() {
   }
 
   function SaveOrder(): void {
-    
     // TODO ask user: are you sure you want to update this order?
 
     // TODO CHECK FORM VALIDATIONS
@@ -59,7 +59,6 @@ function Form() {
   }
 
   function CreateOrder(): void {
-    
     // TODO ask user: are you sure you want to create this order?
 
     // TODO CHECK FORM VALIDATIONS
@@ -110,12 +109,17 @@ function Form() {
         </Tabs>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={() => CloseForm()}>
-          Cancelar
-        </Button>
-        <Button variant="primary" onClick={() => HandleAction()}>
-          {GetAction()}
-        </Button>
+        <div className="modalFooter">
+          <p>PVP: {Math.round(Math.random() * 10000).toLocaleString()} Eur</p>
+          <div>
+            <Button variant="secondary" onClick={() => CloseForm()}>
+              Cancelar
+            </Button>
+            <Button variant="primary" onClick={() => HandleAction()}>
+              {GetAction()}
+            </Button>
+          </div>
+        </div>
       </Modal.Footer>
     </Modal>
   );
