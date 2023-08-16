@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import OrderTile from "../orderTile/orderTile";
 import { Order } from "../../../../store/model/order";
-import "./orderslist.css";
+import "./ordersList.css";
 
 function OrdersList() {
   const orders = useSelector((state: any) => state.ordersReducer)
