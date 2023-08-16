@@ -6,7 +6,7 @@ import Sides from "./sides/Sides";
 import TruckPlatform from "./truckPlatform/TruckPlatform";
 import CargoTieingSystem from "./cargoTieingSystem/CargoTieingSystems";
 import { useDispatch, useSelector } from "react-redux";
-import { FormState, actions as formActions } from "../formSlice";
+import { FormState, Mode, actions as formActions } from "../formSlice";
 import { actions as ordersActions } from "../../pageOrders/ordersSlice";
 
 function Form() {
@@ -20,7 +20,42 @@ function Form() {
     dispatch(formActions.setInitialState());
   }
 
-  function SubmitForm(): void {
+  function HandleAction(): void {
+    switch (formState.Options.Mode) {
+      case Mode.Create:
+        return CreateOrder();
+      case Mode.Edit:
+        return SaveOrder();
+      default:
+        return EnableEdit();
+    }
+  }
+
+  function GetAction(): string {
+    switch (formState.Options.Mode) {
+      case Mode.Create:
+        return "Encomendar";
+      case Mode.Edit:
+        return "Guardar";
+      default:
+        return "Editar";
+    }
+  }
+
+  function EnableEdit(): void {
+    dispatch(formActions.setMode(Mode.Edit));
+  }
+
+  function SaveOrder(): void {
+    // TODO CHECK FORM VALIDATIONS
+
+    // TODO REMOVE TMP PUSH TO ORDERS SLICES
+    dispatch(ordersActions.updateOrder(formState.Order));
+
+    CloseForm();
+  }
+
+  function CreateOrder(): void {
     // TODO CHECK FORM VALIDATIONS
 
     // TODO REMOVE TMP PUSH TO ORDERS SLICES
@@ -72,8 +107,8 @@ function Form() {
         <Button variant="secondary" onClick={() => CloseForm()}>
           Cancelar
         </Button>
-        <Button variant="primary" onClick={() => SubmitForm()}>
-          Encomendar
+        <Button variant="primary" onClick={() => HandleAction()}>
+          {GetAction()}
         </Button>
       </Modal.Footer>
     </Modal>

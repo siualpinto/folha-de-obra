@@ -65,6 +65,9 @@ const formSlice = createSlice({
     setIsOpen: (state, action) => {
       state.value.Options.IsOpen = action.payload;
     },
+    setMode: (state, action) => {
+      state.value.Options.Mode = action.payload;
+    },
     setClientName: (state, action) => {
       state.value.Order.Client.Name = action.payload;
     },

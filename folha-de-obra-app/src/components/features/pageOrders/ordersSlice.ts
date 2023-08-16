@@ -40,9 +40,17 @@ const ordersSlice = createSlice({
   },
   reducers: {
     addOrder: (state, action) => {
-      let order = { ...action.payload } as Order;
+      const order = { ...action.payload } as Order;
+      if (!order) return;
       order.Id = Math.round(Math.random() * 100000000000);
       state.value.unshift(order);
+    },
+    updateOrder: (state, action) => {
+      const order = action.payload as Order;
+      if (!order) return;
+      const index = state.value.findIndex(o => o.Id == order.Id);
+      if (index <= -1) return;
+      state.value[index] = order;
     },
   },
 });
