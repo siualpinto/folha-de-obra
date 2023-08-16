@@ -10,7 +10,6 @@ import { Provider } from "react-redux";
 console.log(import.meta.env.MODE);
 if (import.meta.env.MODE === 'production') {
   console.log = () => {}
-  console.error = () => {}
   console.debug = () => {}
 }
 
