@@ -11,7 +11,8 @@ import { actions as ordersActions } from "../../pageOrders/ordersSlice";
 import "./Form.css";
 
 function Form() {
-  const [key, setKey] = useState("Client");
+  const tabs = ["Client", "Vehicle", "TruckPlatform", "Carga", "Basculante", "Laterais"];
+  const [key, setKey] = useState(tabs[0]);
   const dispatch = useDispatch();
   const formState = useSelector((state: any) => state.formReducer).value as FormState;
 
@@ -68,6 +69,13 @@ function Form() {
     CloseForm();
   }
 
+  function SetPreviousTab(): void {
+    setKey(tabs[tabs.indexOf(key) - 1]);
+  }
+  function SetNextTab(): void {
+    setKey(tabs[tabs.indexOf(key) + 1]);
+  }
+
   return (
     <Modal centered fullscreen show={formState.Options.IsOpen} onHide={() => CloseForm()}>
       <Modal.Header closeButton>
@@ -75,21 +83,21 @@ function Form() {
       </Modal.Header>
       <Modal.Body>
         <Tabs id="controlled-tab-form" activeKey={key} onSelect={(k) => setKey(k!)} className="mb-5">
-          <Tab eventKey="Client" title="Cliente" className="container">
+          <Tab eventKey={tabs[0]} title="Cliente" className="container">
             <Client />
           </Tab>
-          <Tab eventKey="Vehicle" title="Veiculo" className="container">
+          <Tab eventKey={tabs[1]} title="Veiculo" className="container">
             <Vehicle />
           </Tab>
-          <Tab eventKey="TruckPlatform" title="Configuração de estrado" className="container">
+          <Tab eventKey={tabs[2]} title="Configuração de estrado" className="container">
             <TruckPlatform />
           </Tab>
-          <Tab eventKey="Carga" title="Sistemas de amarração de carga" className="container">
+          <Tab eventKey={tabs[3]} title="Sistemas de amarração de carga" className="container">
             <CargoTieingSystem />
           </Tab>
           {/* TODO */}
-          <Tab eventKey="Basculante" title="Configuração especifica basculante" className="container"></Tab>
-          <Tab eventKey="Laterais" title="Laterais" className="container">
+          <Tab eventKey={tabs[4]} title="Configuração especifica basculante" className="container"></Tab>
+          <Tab eventKey={tabs[5]} title="Laterais" className="container">
             <TruckSides />
           </Tab>
         </Tabs>
@@ -98,12 +106,23 @@ function Form() {
         <div className="modalFooter">
           <p>PVP: {Math.round(Math.random() * 10000).toLocaleString()} Eur</p>
           <div>
-            <Button variant="secondary" onClick={() => CloseForm()}>
+            {key != tabs[0] ? (
+              <Button className="footer-btn" onClick={() => SetPreviousTab()}>
+                Anterior
+              </Button>
+            ) : null}
+            <Button className="footer-btn" onClick={() => CloseForm()}>
               Cancelar
             </Button>
-            <Button variant="primary" onClick={() => HandleAction()}>
-              {GetAction()}
-            </Button>
+            {key != tabs[tabs.length - 1] ? (
+              <Button className="footer-btn" onClick={() => SetNextTab()}>
+                Seguinte
+              </Button>
+            ) : (
+              <Button className="footer-btn-order" variant="primary" onClick={() => HandleAction()}>
+                {GetAction()}
+              </Button>
+            )}
           </div>
         </div>
       </Modal.Footer>

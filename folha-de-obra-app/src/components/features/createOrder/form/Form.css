@@ -3,3 +3,17 @@
   justify-content: space-between;
   width: 100vw;
 }
+
+.footer-btn-order {
+  margin-left: 24px;
+}
+
+.footer-btn {
+  border-radius: 0% !important;
+  padding: 0.5rem 0.75rem !important;
+  margin-left: -1px !important;
+  line-height: 1.25 !important;
+  color: #8493a5 !important;
+  background-color: transparent !important;
+  border: 1px solid #dee2e6 !important;
+}
