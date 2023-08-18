@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Order } from "../../../store/model/order";
+import { Order } from "../../../store/model/order/order";
 
-const orderInitialState: Order[] = []
+const orderInitialState: Order[] = [];
 
 for (let index = 0; index < 10; index++) {
   orderInitialState.push({
@@ -48,7 +48,7 @@ const ordersSlice = createSlice({
     updateOrder: (state, action) => {
       const order = action.payload as Order;
       if (!order) return;
-      const index = state.value.findIndex(o => o.Id == order.Id);
+      const index = state.value.findIndex((o) => o.Id == order.Id);
       if (index <= -1) return;
       state.value[index] = order;
     },

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import OrderTile from "../orderTile/orderTile";
-import { Order } from "../../../../store/model/order";
+import { Order } from "../../../../store/model/order/order";
 import "./ordersList.css";
 
 function OrdersList() {

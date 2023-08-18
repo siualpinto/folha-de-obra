@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Order } from "../../../store/model/order";
+import { Order } from "../../../store/model/order/order";
 
 export interface Options {
-  IsOpen: boolean,
-  Mode: Mode
+  IsOpen: boolean;
+  Mode: Mode;
 }
 
 export interface FormState {
-  Order: Order,
-  Options: Options
+  Order: Order;
+  Options: Options;
 }
 export enum Mode {
   Create,
@@ -19,7 +19,7 @@ export enum Mode {
 const formInitialState: FormState = {
   Options: {
     IsOpen: false,
-    Mode: Mode.Create
+    Mode: Mode.Create,
   },
   Order: {
     Id: -1,
@@ -47,7 +47,20 @@ const formInitialState: FormState = {
         Length: "",
       },
     },
-  }
+    TruckPlatform: {
+      TruckPlatformType: "",
+      TruckBeamType: "",
+      TruckTraverseBeamType: "",
+      TruckClosingBeamType: "",
+      TruckFloorType: "",
+      TruckFrameFixturesToChassisType: "",
+    },
+    CargoTieingSystem: {
+      EmbeddedRingsType: "",
+      EmbeddedRingsSN: "",
+      EmbeddedRingsQuantity: "",
+    },
+  },
 };
 
 const formSlice = createSlice({
@@ -115,6 +128,12 @@ const formSlice = createSlice({
     },
     setVehicleInternalDimensionsWidth: (state, action) => {
       state.value.Order.Vehicle.InternalDimensions.Width = action.payload;
+    },
+    setTruckPlatform: (state, action) => {
+      state.value.Order.TruckPlatform = action.payload;
+    },
+    setCargoTieingSystem: (state, action) => {
+      state.value.Order.CargoTieingSystem = action.payload;
     },
   },
 });

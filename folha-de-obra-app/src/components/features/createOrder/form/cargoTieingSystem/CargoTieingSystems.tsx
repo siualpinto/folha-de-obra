@@ -1,15 +1,31 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import MultipleInputs from "../../../../common/Inputs/MultipleInputs";
 import {
   embeddedRings,
   embeddedRingsQuantity,
   embeddedRingsSN,
 } from "./Helper";
-import { FormState, Mode } from "../../formSlice";
+import { FormState, Mode, actions } from "../../formSlice";
+import { ChangeEvent } from "react";
+import { InputProp, SelectProp } from "../../../../common/entities/FormProps";
 
-const CargoTieingSystem = () => {
+function CargoTieingSystem() {
+  const dispatch = useDispatch();
   const formState = useSelector((state: any) => state.formReducer)
     .value as FormState;
+  function onChange(
+    event: ChangeEvent<HTMLSelectElement> | ChangeEvent<HTMLInputElement>
+  ) {
+    const { name, value } = event.target;
+    console.log(event.target);
+    dispatch(
+      actions.setCargoTieingSystem({
+        ...formState.Order.CargoTieingSystem,
+        [name]: value,
+      })
+    );
+  }
+
   return (
     <>
       <div className="container">
@@ -21,15 +37,22 @@ const CargoTieingSystem = () => {
                 {
                   ...embeddedRings,
                   disabled: formState.Options.Mode === Mode.View,
-                },
+                  value: formState.Order.CargoTieingSystem.EmbeddedRingsType,
+                  onChange: (e) => onChange(e),
+                } as SelectProp,
                 {
                   ...embeddedRingsSN,
                   disabled: formState.Options.Mode === Mode.View,
-                },
+                  value: formState.Order.CargoTieingSystem.EmbeddedRingsSN,
+                  onChange: (e) => onChange(e),
+                } as InputProp,
                 {
                   ...embeddedRingsQuantity,
                   disabled: formState.Options.Mode === Mode.View,
-                },
+                  value:
+                    formState.Order.CargoTieingSystem.EmbeddedRingsQuantity,
+                  onChange: (e) => onChange(e),
+                } as InputProp,
               ]}
             />
           </div>
@@ -37,7 +60,7 @@ const CargoTieingSystem = () => {
       </div>
     </>
   );
-};
+}
 
 export default CargoTieingSystem;
 

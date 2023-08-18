@@ -13,13 +13,13 @@ export const embeddedRings: SelectProp = {
 };
 
 export const embeddedRingsSN: InputProp = {
-  id: "embeddedRingsSN",
+  id: "EmbeddedRingsSN",
   label: "S/N",
   type: FormPropType.Input,
 };
 
 export const embeddedRingsQuantity: InputProp = {
-  id: "embeddedRingsQuantity",
+  id: "EmbeddedRingsQuantity",
   label: "QTD/LATERAL",
   type: FormPropType.Input,
 };

@@ -4,17 +4,6 @@ import "./App.css";
 import OrdersList from "./components/features/pageOrders/ordersList/ordersList";
 import Filters from "./components/features/pageOrders/filters/filters";
 
-// function App() {
-//   return (
-//     <>
-//       <div>
-//
-//         <Form />
-//       </div>
-//     </>
-//   );
-// }
-
 function App() {
   return (
     <>
