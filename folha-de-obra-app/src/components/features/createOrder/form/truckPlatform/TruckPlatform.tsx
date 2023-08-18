@@ -7,12 +7,9 @@ import { ChangeEvent } from "react";
 
 function TruckPlatform() {
   const dispatch = useDispatch();
-  const formState = useSelector((state: any) => state.formReducer)
-    .value as FormState;
+  const formState = useSelector((state: any) => state.formReducer).value as FormState;
 
-  function onChange(
-    event: ChangeEvent<HTMLSelectElement> | ChangeEvent<HTMLInputElement>
-  ) {
+  function onChange(event: ChangeEvent<HTMLSelectElement> | ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target;
     dispatch(
       actions.setTruckPlatform({
@@ -33,7 +30,7 @@ function TruckPlatform() {
               label="Tipo De Estrutura Para Estrado"
               options={data.TruckPlatformTypes}
               value={formState.Order.TruckPlatform.TruckPlatformType}
-              onChange={(e) => onChange(e)}
+              onChange={onChange}
             />
             <Select
               disabled={formState.Options.Mode === Mode.View}
@@ -41,7 +38,7 @@ function TruckPlatform() {
               label="Tipo De Longarinas"
               options={data.TruckBeamTypes}
               value={formState.Order.TruckPlatform.TruckBeamType}
-              onChange={(e) => onChange(e)}
+              onChange={onChange}
             />
             <Select
               disabled={formState.Options.Mode === Mode.View}
@@ -49,7 +46,7 @@ function TruckPlatform() {
               label="Tipo De Travessas"
               options={data.TruckTraverseBeamTypes}
               value={formState.Order.TruckPlatform.TruckTraverseBeamType}
-              onChange={(e) => onChange(e)}
+              onChange={onChange}
             />
             <Select
               disabled={formState.Options.Mode === Mode.View}
@@ -57,23 +54,21 @@ function TruckPlatform() {
               label="Fechal"
               options={data.TruckTraverseBeamTypes}
               value={formState.Order.TruckPlatform.TruckClosingBeamType}
-              onChange={(e) => onChange(e)}
+              onChange={onChange}
             />
             <Input
               id="TruckFloorType"
               label="Tipo De Piso"
               disabled={formState.Options.Mode === Mode.View}
               value={formState.Order.TruckPlatform.TruckFloorType}
-              onChange={(e) => onChange(e)}
+              onChange={onChange}
             />
             <Input
               disabled={formState.Options.Mode === Mode.View}
               id="TruckFrameFixturesToChassisType"
               label="Tipo De Fixações De Estrutura Ao Chassis"
-              value={
-                formState.Order.TruckPlatform.TruckFrameFixturesToChassisType
-              }
-              onChange={(e) => onChange(e)}
+              value={formState.Order.TruckPlatform.TruckFrameFixturesToChassisType}
+              onChange={onChange}
             />
           </div>
         </div>

@@ -1,11 +1,4 @@
-import {
-  externalH,
-  externalL,
-  externalW,
-  internalH,
-  internalL,
-  internalW,
-} from "./Helper";
+import { externalH, externalL, externalW, internalH, internalL, internalW } from "./Helper";
 import data from "../../../../../data/data.json";
 import Input from "../../../../common/Inputs/Input";
 import MultipleInputs from "../../../../common/Inputs/MultipleInputs";
@@ -13,11 +6,41 @@ import Select from "../../../../common/Select";
 import { useDispatch, useSelector } from "react-redux";
 import { actions, FormState, Mode } from "../../formSlice";
 import { InputProp } from "../../../../common/entities/FormProps";
+import { ChangeEvent } from "react";
 
 function Vehicle() {
   const dispatch = useDispatch();
-  const formState = useSelector((state: any) => state.formReducer)
-    .value as FormState;
+  const formState = useSelector((state: any) => state.formReducer).value as FormState;
+
+  function onVehicleChange(event: ChangeEvent<HTMLSelectElement> | ChangeEvent<HTMLInputElement>) {
+    const { name, value } = event.target;
+    dispatch(
+      actions.setVehicle({
+        ...formState.Order.Vehicle,
+        [name]: value,
+      })
+    );
+  }
+
+  function onExternalDimensionsVehicleChange(event: ChangeEvent<HTMLSelectElement> | ChangeEvent<HTMLInputElement>) {
+    const { name, value } = event.target;
+    dispatch(
+      actions.setVehicleExternalDimensions({
+        ...formState.Order.Vehicle.ExternalDimensions,
+        [name]: value,
+      })
+    );
+  }
+
+  function onInternalDimensionsVehicleChange(event: ChangeEvent<HTMLSelectElement> | ChangeEvent<HTMLInputElement>) {
+    const { name, value } = event.target;
+    dispatch(
+      actions.setVehicleInternalDimensions({
+        ...formState.Order.Vehicle.InternalDimensions,
+        [name]: value,
+      })
+    );
+  }
 
   return (
     <>
@@ -26,13 +49,11 @@ function Vehicle() {
           <div className="col">
             <Select
               disabled={formState.Options.Mode === Mode.View}
-              id="Box"
+              id="BoxType"
               label="Tipo de Caixa"
               options={data.BoxTypes}
               value={formState.Order.Vehicle.BoxType}
-              onChange={(e) =>
-                dispatch(actions.setVehicleBoxType(e.target.value))
-              }
+              onChange={onVehicleChange}
             />
             <Select
               disabled={formState.Options.Mode === Mode.View}
@@ -40,45 +61,35 @@ function Vehicle() {
               label="Marca"
               options={data.BrandTypes}
               value={formState.Order.Vehicle.Brand}
-              onChange={(e) =>
-                dispatch(actions.setVehicleBrand(e.target.value))
-              }
+              onChange={onVehicleChange}
             />
             <Input
               disabled={formState.Options.Mode === Mode.View}
               id="Model"
               label="Modelo"
               value={formState.Order.Vehicle.Model}
-              onChange={(e) =>
-                dispatch(actions.setVehicleModel(e.target.value))
-              }
+              onChange={onVehicleChange}
             />
             <Input
               disabled={formState.Options.Mode === Mode.View}
               id="Tension"
               label="Tensão"
               value={formState.Order.Vehicle.Tension}
-              onChange={(e) =>
-                dispatch(actions.setVehicleTension(e.target.value))
-              }
+              onChange={onVehicleChange}
             />
             <Input
               disabled={formState.Options.Mode === Mode.View}
               id="Variant"
               label="Variação"
               value={formState.Order.Vehicle.Variation}
-              onChange={(e) =>
-                dispatch(actions.setVehicleVariation(e.target.value))
-              }
+              onChange={onVehicleChange}
             />
             <Input
               disabled={formState.Options.Mode === Mode.View}
               id="Version"
               label="Versão"
               value={formState.Order.Vehicle.Version}
-              onChange={(e) =>
-                dispatch(actions.setVehicleVersion(e.target.value))
-              }
+              onChange={onVehicleChange}
             />
           </div>
           <div className="col">
@@ -88,28 +99,19 @@ function Vehicle() {
                 {
                   ...externalL,
                   value: formState.Order.Vehicle.ExternalDimensions.Length,
-                  onChange: (e: any) =>
-                    dispatch(
-                      actions.setVehicleExternalDimensionsLength(e.target.value)
-                    ),
+                  onChange: onExternalDimensionsVehicleChange,
                   disabled: formState.Options.Mode === Mode.View,
                 } as InputProp,
                 {
                   ...externalW,
                   value: formState.Order.Vehicle.ExternalDimensions.Width,
-                  onChange: (e: any) =>
-                    dispatch(
-                      actions.setVehicleExternalDimensionsWidth(e.target.value)
-                    ),
+                  onChange: onExternalDimensionsVehicleChange,
                   disabled: formState.Options.Mode === Mode.View,
                 } as InputProp,
                 {
                   ...externalH,
                   value: formState.Order.Vehicle.ExternalDimensions.Height,
-                  onChange: (e: any) =>
-                    dispatch(
-                      actions.setVehicleExternalDimensionsHeight(e.target.value)
-                    ),
+                  onChange: onExternalDimensionsVehicleChange,
                   disabled: formState.Options.Mode === Mode.View,
                 } as InputProp,
               ]}
@@ -120,28 +122,19 @@ function Vehicle() {
                 {
                   ...internalL,
                   value: formState.Order.Vehicle.InternalDimensions.Length,
-                  onChange: (e: any) =>
-                    dispatch(
-                      actions.setVehicleInternalDimensionsLength(e.target.value)
-                    ),
+                  onChange: onInternalDimensionsVehicleChange,
                   disabled: formState.Options.Mode === Mode.View,
                 } as InputProp,
                 {
                   ...internalW,
                   value: formState.Order.Vehicle.InternalDimensions.Width,
-                  onChange: (e: any) =>
-                    dispatch(
-                      actions.setVehicleInternalDimensionsWidth(e.target.value)
-                    ),
+                  onChange: onInternalDimensionsVehicleChange,
                   disabled: formState.Options.Mode === Mode.View,
                 } as InputProp,
                 {
                   ...internalH,
                   value: formState.Order.Vehicle.InternalDimensions.Height,
-                  onChange: (e: any) =>
-                    dispatch(
-                      actions.setVehicleInternalDimensionsHeight(e.target.value)
-                    ),
+                  onChange: onInternalDimensionsVehicleChange,
                   disabled: formState.Options.Mode === Mode.View,
                 } as InputProp,
               ]}

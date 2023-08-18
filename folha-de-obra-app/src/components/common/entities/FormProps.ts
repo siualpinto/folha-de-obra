@@ -11,6 +11,7 @@ export enum FormPropType {
 
 export interface InputProp extends FormProp {
   label: string;
+  name?: string | undefined;
   inputType?: "text" | "number";
   type?: FormPropType.Input;
   onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;

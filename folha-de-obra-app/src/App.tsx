@@ -8,7 +8,6 @@ function App() {
   return (
     <>
       <Header />
-
       <main className="main">
         <div>
           <Search />

@@ -1,4 +1,4 @@
-import { Dimension } from "../dimension";
+import { Dimension } from "./dimension";
 
 export interface Vehicle {
   BoxType: string;

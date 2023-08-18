@@ -1,37 +1,45 @@
 import Input from "../../../../common/Inputs/Input";
 import { useDispatch, useSelector } from "react-redux";
 import { actions, FormState, Mode } from "../../formSlice";
+import { ChangeEvent } from "react";
 
 const Client = () => {
   const dispatch = useDispatch();
-  const formState = useSelector((state: any) => state.formReducer)
-    .value as FormState;
+  const formState = useSelector((state: any) => state.formReducer).value as FormState;
+
+  function onChange(event: ChangeEvent<HTMLSelectElement> | ChangeEvent<HTMLInputElement>) {
+    const { name, value } = event.target;
+    dispatch(
+      actions.setClient({
+        ...formState.Order.Client,
+        [name]: value,
+      })
+    );
+  }
 
   return (
     <>
       <div className="col-md-3">
         <Input
           disabled={formState.Options.Mode === Mode.View}
-          id="ClientName"
+          id="Name"
           label="Nome"
           value={formState.Order.Client.Name}
-          onChange={(e) => dispatch(actions.setClientName(e.target.value))}
+          onChange={onChange}
         />
         <Input
           disabled={formState.Options.Mode === Mode.View}
-          id="PersonName"
+          id="ContactPerson"
           label="Pessoa de contacto"
           value={formState.Order.Client.ContactPerson}
-          onChange={(e) =>
-            dispatch(actions.setClientContactPerson(e.target.value))
-          }
+          onChange={onChange}
         />
         <Input
           disabled={formState.Options.Mode === Mode.View}
           id="Email"
           label="Email"
           value={formState.Order.Client.Email}
-          onChange={(e) => dispatch(actions.setClientEmail(e.target.value))}
+          onChange={onChange}
         />
         <Input
           disabled={formState.Options.Mode === Mode.View}
@@ -39,7 +47,7 @@ const Client = () => {
           inputType="number"
           label="Telemovel"
           value={formState.Order.Client.Phone}
-          onChange={(e) => dispatch(actions.setClientPhone(e.target.value))}
+          onChange={onChange}
         />
       </div>
     </>

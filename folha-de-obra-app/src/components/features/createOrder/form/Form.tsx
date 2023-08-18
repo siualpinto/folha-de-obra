@@ -2,7 +2,7 @@ import { Button, Modal, Tab, Tabs } from "react-bootstrap";
 import { useState } from "react";
 import Client from "./client/Client";
 import Vehicle from "./vehicle/Vehicle";
-import Sides from "./sides/Sides";
+import TruckSides from "./truckSides/TruckSides";
 import TruckPlatform from "./truckPlatform/TruckPlatform";
 import CargoTieingSystem from "./cargoTieingSystem/CargoTieingSystems";
 import { useDispatch, useSelector } from "react-redux";
@@ -104,7 +104,7 @@ function Form() {
             title="Configuração especifica basculante"
           ></Tab>
           <Tab eventKey="Laterais" title="Laterais">
-            <Sides />
+            <TruckSides />
           </Tab>
         </Tabs>
       </Modal.Body>

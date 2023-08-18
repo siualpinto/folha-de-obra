@@ -1,10 +1,5 @@
 import Select from "../Select";
-import {
-  InputProp,
-  FormPropType,
-  SelectProp,
-  MultipleInput,
-} from "../entities/FormProps";
+import { InputProp, FormPropType, SelectProp, MultipleInput } from "../entities/FormProps";
 import Input from "./Input";
 const MultipleInputs = ({ inputs, title }: MultipleInput) => {
   return (
@@ -14,12 +9,8 @@ const MultipleInputs = ({ inputs, title }: MultipleInput) => {
         <div className="row">
           {inputs.map((input) => (
             <div key={input.id} className="col">
-              {input.type == FormPropType.Input && (
-                <Input {...(input as InputProp)} />
-              )}
-              {input.type == FormPropType.Select && (
-                <Select {...(input as SelectProp)} />
-              )}
+              {input.type == FormPropType.Input && <Input {...(input as InputProp)} />}
+              {input.type == FormPropType.Select && <Select {...(input as SelectProp)} />}
             </div>
           ))}
         </div>

@@ -60,6 +60,13 @@ const formInitialState: FormState = {
       EmbeddedRingsSN: "",
       EmbeddedRingsQuantity: "",
     },
+    TruckSides: {
+      SideType: "",
+      CentralColumns: "",
+      RearColumns: "",
+      FrontColumns: "",
+      SupplementarySidesType: "",
+    },
   },
 };
 
@@ -81,59 +88,26 @@ const formSlice = createSlice({
     setMode: (state, action) => {
       state.value.Options.Mode = action.payload;
     },
-    setClientName: (state, action) => {
-      state.value.Order.Client.Name = action.payload;
+    setClient: (state, action) => {
+      state.value.Order.Client = action.payload;
     },
-    setClientContactPerson: (state, action) => {
-      state.value.Order.Client.ContactPerson = action.payload;
+    setVehicle: (state, action) => {
+      state.value.Order.Vehicle = action.payload;
     },
-    setClientEmail: (state, action) => {
-      state.value.Order.Client.Email = action.payload;
+    setVehicleExternalDimensions: (state, action) => {
+      state.value.Order.Vehicle.ExternalDimensions = action.payload;
     },
-    setClientPhone: (state, action) => {
-      state.value.Order.Client.Phone = action.payload;
-    },
-    setVehicleBoxType: (state, action) => {
-      state.value.Order.Vehicle.BoxType = action.payload;
-    },
-    setVehicleBrand: (state, action) => {
-      state.value.Order.Vehicle.Brand = action.payload;
-    },
-    setVehicleModel: (state, action) => {
-      state.value.Order.Vehicle.Model = action.payload;
-    },
-    setVehicleTension: (state, action) => {
-      state.value.Order.Vehicle.Tension = action.payload;
-    },
-    setVehicleVariation: (state, action) => {
-      state.value.Order.Vehicle.Variation = action.payload;
-    },
-    setVehicleVersion: (state, action) => {
-      state.value.Order.Vehicle.Version = action.payload;
-    },
-    setVehicleExternalDimensionsLength: (state, action) => {
-      state.value.Order.Vehicle.ExternalDimensions.Length = action.payload;
-    },
-    setVehicleExternalDimensionsHeight: (state, action) => {
-      state.value.Order.Vehicle.ExternalDimensions.Height = action.payload;
-    },
-    setVehicleExternalDimensionsWidth: (state, action) => {
-      state.value.Order.Vehicle.ExternalDimensions.Width = action.payload;
-    },
-    setVehicleInternalDimensionsLength: (state, action) => {
-      state.value.Order.Vehicle.InternalDimensions.Length = action.payload;
-    },
-    setVehicleInternalDimensionsHeight: (state, action) => {
-      state.value.Order.Vehicle.InternalDimensions.Height = action.payload;
-    },
-    setVehicleInternalDimensionsWidth: (state, action) => {
-      state.value.Order.Vehicle.InternalDimensions.Width = action.payload;
+    setVehicleInternalDimensions: (state, action) => {
+      state.value.Order.Vehicle.InternalDimensions = action.payload;
     },
     setTruckPlatform: (state, action) => {
       state.value.Order.TruckPlatform = action.payload;
     },
     setCargoTieingSystem: (state, action) => {
       state.value.Order.CargoTieingSystem = action.payload;
+    },
+    setTruckSides: (state, action) => {
+      state.value.Order.TruckSides = action.payload;
     },
   },
 });
