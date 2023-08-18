@@ -12,7 +12,7 @@ export enum FormPropType {
 export interface InputProp extends FormProp {
   label: string;
   name?: string | undefined;
-  inputType?: "text" | "number";
+  inputType?: "text" | "number" | "email";
   type?: FormPropType.Input;
   onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
   value?: string | ReadonlyArray<string> | number | undefined;
@@ -22,7 +22,7 @@ export interface SelectProp extends FormProp {
   label: string;
   options: string[];
   type?: FormPropType.Select;
-  onChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined;
+  onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
   value?: string | ReadonlyArray<string> | number | undefined;
 }
 

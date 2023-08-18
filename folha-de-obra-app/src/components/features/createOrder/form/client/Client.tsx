@@ -19,37 +19,36 @@ const Client = () => {
 
   return (
     <>
-      <div className="col-md-3">
-        <Input
-          disabled={formState.Options.Mode === Mode.View}
-          id="Name"
-          label="Nome"
-          value={formState.Order.Client.Name}
-          onChange={onChange}
-        />
-        <Input
-          disabled={formState.Options.Mode === Mode.View}
-          id="ContactPerson"
-          label="Pessoa de contacto"
-          value={formState.Order.Client.ContactPerson}
-          onChange={onChange}
-        />
-        <Input
-          disabled={formState.Options.Mode === Mode.View}
-          id="Email"
-          label="Email"
-          value={formState.Order.Client.Email}
-          onChange={onChange}
-        />
-        <Input
-          disabled={formState.Options.Mode === Mode.View}
-          id="Phone"
-          inputType="number"
-          label="Telemovel"
-          value={formState.Order.Client.Phone}
-          onChange={onChange}
-        />
-      </div>
+      <Input
+        disabled={formState.Options.Mode === Mode.View}
+        id="Name"
+        label="Nome"
+        value={formState.Order.Client.Name}
+        onChange={onChange}
+      />
+      <Input
+        disabled={formState.Options.Mode === Mode.View}
+        id="ContactPerson"
+        label="Pessoa de contacto"
+        value={formState.Order.Client.ContactPerson}
+        onChange={onChange}
+      />
+      <Input
+        disabled={formState.Options.Mode === Mode.View}
+        id="Email"
+        label="Email"
+        value={formState.Order.Client.Email}
+        onChange={onChange}
+        inputType="email"
+      />
+      <Input
+        disabled={formState.Options.Mode === Mode.View}
+        id="Phone"
+        inputType="number"
+        label="Telemovel"
+        value={formState.Order.Client.Phone}
+        onChange={onChange}
+      />
     </>
   );
 };

@@ -21,35 +21,29 @@ function CargoTieingSystem() {
 
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <MultipleInputs
-              title="Argolas Embutidas"
-              inputs={[
-                {
-                  ...embeddedRings,
-                  disabled: formState.Options.Mode === Mode.View,
-                  value: formState.Order.CargoTieingSystem.EmbeddedRingsType,
-                  onChange: onChange,
-                } as SelectProp,
-                {
-                  ...embeddedRingsSN,
-                  disabled: formState.Options.Mode === Mode.View,
-                  value: formState.Order.CargoTieingSystem.EmbeddedRingsSN,
-                  onChange: onChange,
-                } as InputProp,
-                {
-                  ...embeddedRingsQuantity,
-                  disabled: formState.Options.Mode === Mode.View,
-                  value: formState.Order.CargoTieingSystem.EmbeddedRingsQuantity,
-                  onChange: onChange,
-                } as InputProp,
-              ]}
-            />
-          </div>
-        </div>
-      </div>
+      <MultipleInputs
+        title="Argolas Embutidas"
+        inputs={[
+          {
+            ...embeddedRings,
+            disabled: formState.Options.Mode === Mode.View,
+            value: formState.Order.CargoTieingSystem.EmbeddedRingsType,
+            onChange: onChange,
+          } as SelectProp,
+          {
+            ...embeddedRingsSN,
+            disabled: formState.Options.Mode === Mode.View,
+            value: formState.Order.CargoTieingSystem.EmbeddedRingsSN,
+            onChange: onChange,
+          } as InputProp,
+          {
+            ...embeddedRingsQuantity,
+            disabled: formState.Options.Mode === Mode.View,
+            value: formState.Order.CargoTieingSystem.EmbeddedRingsQuantity,
+            onChange: onChange,
+          } as InputProp,
+        ]}
+      />
     </>
   );
 }

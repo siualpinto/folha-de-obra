@@ -30,6 +30,26 @@ for (let index = 0; index < 10; index++) {
         Length: "6",
       },
     },
+    TruckPlatform: {
+      TruckPlatformType: "",
+      TruckBeamType: "",
+      TruckTraverseBeamType: "",
+      TruckClosingBeamType: "",
+      TruckFloorType: "",
+      TruckFrameFixturesToChassisType: "",
+    },
+    CargoTieingSystem: {
+      EmbeddedRingsType: "",
+      EmbeddedRingsSN: "",
+      EmbeddedRingsQuantity: "",
+    },
+    TruckSides: {
+      SideType: "",
+      CentralColumns: "",
+      RearColumns: "",
+      FrontColumns: "",
+      SupplementarySidesType: "",
+    },
   });
 }
 

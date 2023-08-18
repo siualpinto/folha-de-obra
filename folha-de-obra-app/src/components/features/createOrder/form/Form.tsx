@@ -13,8 +13,7 @@ import "./Form.css";
 function Form() {
   const [key, setKey] = useState("Client");
   const dispatch = useDispatch();
-  const formState = useSelector((state: any) => state.formReducer)
-    .value as FormState;
+  const formState = useSelector((state: any) => state.formReducer).value as FormState;
 
   function CloseForm(): void {
     dispatch(formActions.setIsOpen(false));
@@ -70,40 +69,27 @@ function Form() {
   }
 
   return (
-    <Modal
-      centered
-      fullscreen
-      show={formState.Options.IsOpen}
-      onHide={() => CloseForm()}
-    >
+    <Modal centered fullscreen show={formState.Options.IsOpen} onHide={() => CloseForm()}>
       <Modal.Header closeButton>
         <Modal.Title>Configurador</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Tabs
-          id="controlled-tab-form"
-          activeKey={key}
-          onSelect={(k) => setKey(k!)}
-          className="mb-3"
-        >
-          <Tab eventKey="Client" title="Cliente">
+        <Tabs id="controlled-tab-form" activeKey={key} onSelect={(k) => setKey(k!)} className="mb-5">
+          <Tab eventKey="Client" title="Cliente" className="container">
             <Client />
           </Tab>
-          <Tab eventKey="Vehicle" title="Veiculo">
+          <Tab eventKey="Vehicle" title="Veiculo" className="container">
             <Vehicle />
           </Tab>
-          <Tab eventKey="TruckPlatform" title="Configuração de estrado">
+          <Tab eventKey="TruckPlatform" title="Configuração de estrado" className="container">
             <TruckPlatform />
           </Tab>
-          <Tab eventKey="Carga" title="Sistemas de amarração de carga">
+          <Tab eventKey="Carga" title="Sistemas de amarração de carga" className="container">
             <CargoTieingSystem />
           </Tab>
           {/* TODO */}
-          <Tab
-            eventKey="Basculante"
-            title="Configuração especifica basculante"
-          ></Tab>
-          <Tab eventKey="Laterais" title="Laterais">
+          <Tab eventKey="Basculante" title="Configuração especifica basculante" className="container"></Tab>
+          <Tab eventKey="Laterais" title="Laterais" className="container">
             <TruckSides />
           </Tab>
         </Tabs>

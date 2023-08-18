@@ -21,49 +21,43 @@ function TruckSides() {
 
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <Select
-              disabled={formState.Options.Mode === Mode.View}
-              id="SideType"
-              label="Tipos de Taipais"
-              options={data.SideTypes}
-              value={formState.Order.TruckSides.SideType}
-              onChange={onChange}
-            />
-            <Input
-              disabled={formState.Options.Mode === Mode.View}
-              id="CentralColumns"
-              label="Colunas Centrais"
-              value={formState.Order.TruckSides.CentralColumns}
-              onChange={onChange}
-            />
-            <Input
-              id="RearColumns"
-              label="Colunas Traseiras"
-              disabled={formState.Options.Mode === Mode.View}
-              value={formState.Order.TruckSides.RearColumns}
-              onChange={onChange}
-            />
-            <Input
-              disabled={formState.Options.Mode === Mode.View}
-              id="FrontColumns"
-              label="Colunas Frontais"
-              value={formState.Order.TruckSides.FrontColumns}
-              onChange={onChange}
-            />
-            <Select
-              disabled={formState.Options.Mode === Mode.View}
-              id="SupplementarySidesType"
-              label="Taipais Suplementares"
-              options={data.SupplementarySides}
-              value={formState.Order.TruckSides.SupplementarySidesType}
-              onChange={onChange}
-            />
-          </div>
-        </div>
-      </div>
+      <Select
+        disabled={formState.Options.Mode === Mode.View}
+        id="SideType"
+        label="Tipos de Taipais"
+        options={data.SideTypes}
+        value={formState.Order.TruckSides.SideType}
+        onChange={onChange}
+      />
+      <Input
+        disabled={formState.Options.Mode === Mode.View}
+        id="CentralColumns"
+        label="Colunas Centrais"
+        value={formState.Order.TruckSides.CentralColumns}
+        onChange={onChange}
+      />
+      <Input
+        id="RearColumns"
+        label="Colunas Traseiras"
+        disabled={formState.Options.Mode === Mode.View}
+        value={formState.Order.TruckSides.RearColumns}
+        onChange={onChange}
+      />
+      <Input
+        disabled={formState.Options.Mode === Mode.View}
+        id="FrontColumns"
+        label="Colunas Frontais"
+        value={formState.Order.TruckSides.FrontColumns}
+        onChange={onChange}
+      />
+      <Select
+        disabled={formState.Options.Mode === Mode.View}
+        id="SupplementarySidesType"
+        label="Taipais Suplementares"
+        options={data.SupplementarySides}
+        value={formState.Order.TruckSides.SupplementarySidesType}
+        onChange={onChange}
+      />
     </>
   );
 }

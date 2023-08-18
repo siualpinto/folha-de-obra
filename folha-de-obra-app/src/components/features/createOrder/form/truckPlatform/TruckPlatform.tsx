@@ -21,58 +21,52 @@ function TruckPlatform() {
 
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <Select
-              disabled={formState.Options.Mode === Mode.View}
-              id="TruckPlatformType"
-              label="Tipo De Estrutura Para Estrado"
-              options={data.TruckPlatformTypes}
-              value={formState.Order.TruckPlatform.TruckPlatformType}
-              onChange={onChange}
-            />
-            <Select
-              disabled={formState.Options.Mode === Mode.View}
-              id="TruckBeamType"
-              label="Tipo De Longarinas"
-              options={data.TruckBeamTypes}
-              value={formState.Order.TruckPlatform.TruckBeamType}
-              onChange={onChange}
-            />
-            <Select
-              disabled={formState.Options.Mode === Mode.View}
-              id="TruckTraverseBeamType"
-              label="Tipo De Travessas"
-              options={data.TruckTraverseBeamTypes}
-              value={formState.Order.TruckPlatform.TruckTraverseBeamType}
-              onChange={onChange}
-            />
-            <Select
-              disabled={formState.Options.Mode === Mode.View}
-              id="TruckClosingBeamType"
-              label="Fechal"
-              options={data.TruckTraverseBeamTypes}
-              value={formState.Order.TruckPlatform.TruckClosingBeamType}
-              onChange={onChange}
-            />
-            <Input
-              id="TruckFloorType"
-              label="Tipo De Piso"
-              disabled={formState.Options.Mode === Mode.View}
-              value={formState.Order.TruckPlatform.TruckFloorType}
-              onChange={onChange}
-            />
-            <Input
-              disabled={formState.Options.Mode === Mode.View}
-              id="TruckFrameFixturesToChassisType"
-              label="Tipo De Fixações De Estrutura Ao Chassis"
-              value={formState.Order.TruckPlatform.TruckFrameFixturesToChassisType}
-              onChange={onChange}
-            />
-          </div>
-        </div>
-      </div>
+      <Select
+        disabled={formState.Options.Mode === Mode.View}
+        id="TruckPlatformType"
+        label="Tipo De Estrutura Para Estrado"
+        options={data.TruckPlatformTypes}
+        value={formState.Order.TruckPlatform.TruckPlatformType}
+        onChange={onChange}
+      />
+      <Select
+        disabled={formState.Options.Mode === Mode.View}
+        id="TruckBeamType"
+        label="Tipo De Longarinas"
+        options={data.TruckBeamTypes}
+        value={formState.Order.TruckPlatform.TruckBeamType}
+        onChange={onChange}
+      />
+      <Select
+        disabled={formState.Options.Mode === Mode.View}
+        id="TruckTraverseBeamType"
+        label="Tipo De Travessas"
+        options={data.TruckTraverseBeamTypes}
+        value={formState.Order.TruckPlatform.TruckTraverseBeamType}
+        onChange={onChange}
+      />
+      <Select
+        disabled={formState.Options.Mode === Mode.View}
+        id="TruckClosingBeamType"
+        label="Fechal"
+        options={data.TruckTraverseBeamTypes}
+        value={formState.Order.TruckPlatform.TruckClosingBeamType}
+        onChange={onChange}
+      />
+      <Input
+        id="TruckFloorType"
+        label="Tipo De Piso"
+        disabled={formState.Options.Mode === Mode.View}
+        value={formState.Order.TruckPlatform.TruckFloorType}
+        onChange={onChange}
+      />
+      <Input
+        disabled={formState.Options.Mode === Mode.View}
+        id="TruckFrameFixturesToChassisType"
+        label="Tipo De Fixações De Estrutura Ao Chassis"
+        value={formState.Order.TruckPlatform.TruckFrameFixturesToChassisType}
+        onChange={onChange}
+      />
     </>
   );
 }
