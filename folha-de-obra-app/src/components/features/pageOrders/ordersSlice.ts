@@ -1,9 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Order } from "../../../store/model/order/order";
+import data from "../../../data/data.json";
 
 const orderInitialState: Order[] = [];
 
-for (let index = 0; index < 10; index++) {
+function GetRandomElement(array: string[]) {
+  return array[(Math.floor(Math.random() * array.length))];
+}
+
+for (let index = 0; index < 20; index++) {
   orderInitialState.push({
     Id: index,
     Client: {
@@ -13,9 +18,9 @@ for (let index = 0; index < 10; index++) {
       Phone: `TestClient${index}_Phone`,
     },
     Vehicle: {
-      BoxType: "",
-      Brand: "",
-      Model: "",
+      BoxType: GetRandomElement(data.BoxTypes),
+      Brand: GetRandomElement(data.BrandTypes),
+      Model: "ModelX",
       Tension: "",
       Variation: "",
       Version: "",

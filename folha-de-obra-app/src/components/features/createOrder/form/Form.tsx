@@ -106,23 +106,27 @@ function Form() {
         <div className="modalFooter">
           <p>PVP: {Math.round(Math.random() * 10000).toLocaleString()} Eur</p>
           <div>
-            {key != tabs[0] ? (
-              <Button className="footer-btn" onClick={() => SetPreviousTab()}>
-                Anterior
-              </Button>
-            ) : null}
+            <Button className="footer-btn" onClick={() => SetPreviousTab()} disabled={key == tabs[0]}>
+              Anterior
+            </Button>
             <Button className="footer-btn" onClick={() => CloseForm()}>
               Cancelar
             </Button>
-            {key != tabs[tabs.length - 1] ? (
-              <Button className="footer-btn" onClick={() => SetNextTab()}>
+            {key != tabs[tabs.length - 1] || formState.Options.Mode === Mode.View ? (
+              <Button className="footer-btn" onClick={() => SetNextTab()} disabled={key == tabs[tabs.length - 1]}>
                 Seguinte
               </Button>
-            ) : (
+            ) : null}
+            {key == tabs[tabs.length - 1] && formState.Options.Mode !== Mode.View ? (
               <Button className="footer-btn-order" variant="primary" onClick={() => HandleAction()}>
                 {GetAction()}
               </Button>
-            )}
+            ) : null}
+            {formState.Options.Mode === Mode.View ? (
+              <Button className="footer-btn-order" variant="primary" onClick={() => HandleAction()}>
+                {GetAction()}
+              </Button>
+            ) : null}
           </div>
         </div>
       </Modal.Footer>

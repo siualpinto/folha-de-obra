@@ -22,9 +22,13 @@ function OrderTile({ Order }: Props) {
   }
 
   return (
-    <li className="order" onClick={() => openOrder(Order)}>
-      <p> {Order.Client.Name}</p>
-    </li>
+    <tr key={Order.Id} onClick={() => openOrder(Order)}>
+      <td className="align-middle text-left">{Order.Id}</td>
+      <td className="align-middle text-left">{Order.Client.Name}</td>
+      <td className="align-middle text-left">{Order.Vehicle.Brand}</td>
+      <td className="align-middle text-left">{Order.Vehicle.Model}</td>
+      <td className="align-middle text-left">{Order.Vehicle.BoxType}</td>
+    </tr>
   );
 }
 

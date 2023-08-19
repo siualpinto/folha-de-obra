@@ -10,19 +10,10 @@ function Header() {
   return (
     <header className="header">
       <div className="logo">
-        <img
-          src="favicon.ico"
-          height="68"
-          width="68"
-          alt="Folha de Obra Logo"
-        />
-        <h1 className="title">Encomendas</h1>
+        <img src="favicon.ico" height="68" width="68" alt="Folha de Obra Logo" />
+        <h1 className="title">Folha de Obra</h1>
       </div>
-      <Button
-        variant="secondary"
-        size="lg"
-        onClick={() => dispatch(actions.setIsOpen(true))}
-      >
+      <Button variant="outline-secondary" size="lg" onClick={() => dispatch(actions.setIsOpen(true))}>
         Configurador
       </Button>
       <Form />
