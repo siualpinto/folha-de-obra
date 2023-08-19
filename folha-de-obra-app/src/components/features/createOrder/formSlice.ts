@@ -4,6 +4,7 @@ import { Order } from "../../../store/model/order/order";
 export interface Options {
   IsOpen: boolean;
   Mode: Mode;
+  SelectedTab?: string;
 }
 
 export interface FormState {
@@ -81,6 +82,9 @@ const formSlice = createSlice({
     },
     setState: (state, action) => {
       state.value = action.payload;
+    },
+    SetSelectTab: (state, action) => {
+      state.value.Options.SelectedTab = action.payload;
     },
     setIsOpen: (state, action) => {
       state.value.Options.IsOpen = action.payload;

@@ -12,9 +12,12 @@ import "./Form.css";
 
 function Form() {
   const tabs = ["Client", "Vehicle", "TruckPlatform", "Carga", "Basculante", "Laterais"];
-  const [key, setKey] = useState(tabs[0]);
   const dispatch = useDispatch();
   const formState = useSelector((state: any) => state.formReducer).value as FormState;
+
+  if (!formState.Options.SelectedTab) {
+    dispatch(formActions.SetSelectTab(tabs[0]));
+  }
 
   function CloseForm(): void {
     dispatch(formActions.setIsOpen(false));
@@ -70,10 +73,12 @@ function Form() {
   }
 
   function SetPreviousTab(): void {
-    setKey(tabs[tabs.indexOf(key) - 1]);
+    if (formState.Options.SelectedTab)
+      dispatch(formActions.SetSelectTab(tabs[tabs.indexOf(formState.Options.SelectedTab) - 1]));
   }
   function SetNextTab(): void {
-    setKey(tabs[tabs.indexOf(key) + 1]);
+    if (formState.Options.SelectedTab)
+      dispatch(formActions.SetSelectTab(tabs[tabs.indexOf(formState.Options.SelectedTab) + 1]));
   }
 
   return (
@@ -82,7 +87,12 @@ function Form() {
         <Modal.Title>Configurador</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Tabs id="controlled-tab-form" activeKey={key} onSelect={(k) => setKey(k!)} className="mb-5">
+        <Tabs
+          id="controlled-tab-form"
+          activeKey={formState.Options.SelectedTab}
+          onSelect={(k) => dispatch(formActions.SetSelectTab(k!))}
+          className="mb-5"
+        >
           <Tab eventKey={tabs[0]} title="Cliente" className="container">
             <Client />
           </Tab>
@@ -106,18 +116,26 @@ function Form() {
         <div className="modalFooter">
           <p>PVP: {Math.round(Math.random() * 10000).toLocaleString()} Eur</p>
           <div>
-            <Button className="footer-btn" onClick={() => SetPreviousTab()} disabled={key == tabs[0]}>
+            <Button
+              className="footer-btn"
+              onClick={() => SetPreviousTab()}
+              disabled={formState.Options.SelectedTab == tabs[0]}
+            >
               Anterior
             </Button>
             <Button className="footer-btn" onClick={() => CloseForm()}>
               Cancelar
             </Button>
-            {key != tabs[tabs.length - 1] || formState.Options.Mode === Mode.View ? (
-              <Button className="footer-btn" onClick={() => SetNextTab()} disabled={key == tabs[tabs.length - 1]}>
+            {formState.Options.SelectedTab != tabs[tabs.length - 1] || formState.Options.Mode === Mode.View ? (
+              <Button
+                className="footer-btn"
+                onClick={() => SetNextTab()}
+                disabled={formState.Options.SelectedTab == tabs[tabs.length - 1]}
+              >
                 Seguinte
               </Button>
             ) : null}
-            {key == tabs[tabs.length - 1] && formState.Options.Mode !== Mode.View ? (
+            {formState.Options.SelectedTab == tabs[tabs.length - 1] && formState.Options.Mode !== Mode.View ? (
               <Button className="footer-btn-order" variant="primary" onClick={() => HandleAction()}>
                 {GetAction()}
               </Button>

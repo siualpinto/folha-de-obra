@@ -81,7 +81,7 @@ function Vehicle() {
         />
         <Input
           disabled={formState.Options.Mode === Mode.View}
-          id="Variant"
+          id="Variation"
           label="Variação"
           value={formState.Order.Vehicle.Variation}
           onChange={onVehicleChange}
