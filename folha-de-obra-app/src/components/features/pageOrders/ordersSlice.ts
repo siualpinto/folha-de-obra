@@ -15,7 +15,7 @@ for (let index = 0; index < 20; index++) {
       Name: `TestClient${index}_Name`,
       ContactPerson: `TestClient${index}_ContactPerson`,
       Email: `TestClient${index}_Email`,
-      Phone: `TestClient${index}_Phone`,
+      Phone: `911111111`,
     },
     Vehicle: {
       BoxType: GetRandomElement(data.BoxTypes),
